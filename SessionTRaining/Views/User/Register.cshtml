@@ -1,0 +1,40 @@
+﻿@model SessionTRaining.Models.User
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+</head>
+<body>
+    <h1>Create an Account</h1>
+
+    <form asp-action="Register" id="registerForm">
+        <label for="username">Username:</label>
+        <input asp-for="Name" type="text" id="username">
+
+        <label for="password">Password:</label>
+        <input asp-for="Password" type="password" id="password">
+
+        <button type="submit">Sign Up</button>
+    </form>
+
+    <script>
+        document.getElementById("registerForm").addEventListener("submit", function (event) {
+
+            let name = document.getElementById("username").value;
+            let pass = document.getElementById("password").value;
+            let valid = false;
+
+            if(valid == true)
+            event.preventDefault
+
+            if (!name || !pass) {
+                document.getElementById("username").value = "Please enter";
+                event.preventDefault();
+            }         
+
+        });
+    </script>
+</body>
+</html>

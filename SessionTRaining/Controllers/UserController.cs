@@ -25,6 +25,14 @@ namespace SessionTRaining.Controllers
                 ModelState.AddModelError("", "Username already exists.");
                 return View();
             }
+            if (!db.Users.Any())
+            {
+                user.Role = "Admin";
+            }
+            else
+            {
+                user.Role = "User";
+            }
             db.Add(user);
             db.SaveChanges();
             return RedirectToAction("LogIn");
