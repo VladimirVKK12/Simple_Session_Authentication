@@ -1,0 +1,20 @@
+﻿@model List<SessionTRaining.Models.UsersToDoList>
+<table style="border: solid 2px; border-collapse: collapse; width: 100%;">
+    <thead>
+        <tr>
+            <th style="border: solid 1px; padding: 8px; text-align: left;">Task</th>
+            <th style="border: solid 1px; padding: 8px; text-align: left;">Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td style="border: solid 1px; padding: 8px;">@item.Name</td>
+                <td style="border: solid 1px; padding: 8px;">@item.Description</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a asp-controller="UserList" asp-action="AddList">Create a Task</a>
